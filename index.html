@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce website landing page design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        * {
+            padding: 0; 
+            margin: 0; 
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        header {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(280deg, #0abde3 80%, black 20%);          
+            position: relative;
+        }
+        #headphone {
+            width: 430px;
+            position: absolute;
+            top: 8%;
+            right: 30%;
+            z-index: 1;
+        }
+        .watermark {
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 3rem;
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            font-size: 8em;
+        }
+        nav {
+            color: white;
+            width: 100%;
+            height: 80px;
+            padding: 20px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            z-index: 99;
+        }
+        .logo {
+            font-size: 3em;
+        }
+        .logo i {
+            background-color: red;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 30px;
+        }
+        .menu i {
+            font-size: 2em;
+        }
+        .slider {
+            max-width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 20%;
+            left: 5%;
+        }
+        .swiper-container {
+            width: 100%;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        #sidenav {
+            width: 0px;
+            height: 70vh;
+            background-color: #262626;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            padding-top: 100px;
+            border-radius: 65% 35% 70% 30% / 30% 30% 70% 70%; 
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+        }
+        #menubar {
+            cursor: pointer;
+            font-size: 30px;
+        }
+        #sidenav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            display: block;
+            font-size: 20px;
+            margin: 15px auto;
+            text-align: center;   
+            transition: 0.4s;
+        }
+        #sidenav a:first-child {
+            color: #0abde3;  
+        }
+        #sidenav a:hover {
+            color: #0abde3;
+        }
+        .content-section {
+            display: none;
+            padding: 20px;
+            background-color: #f4f4f4;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .content-section h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .content-section p {
+            color: #666;
+        }
+        .nav-link {
+            transition: color 0.4s;
+        }
+        .nav-link:hover {
+            color: #0abde3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fa fa-headphones"></i> Boat
+            </div>
+            <div class="menu">
+                <i class="fa fa-bars" id="menubar"></i>
+            </div>
+        </nav>
+        <img src="img/headphone.png" alt="Headphone" id="headphone" class="animate__animated animate__zoomIn">
+        <h1 class="watermark animate__animated animate__zoomIn animate__delay-1s">Headphone</h1>
+        <div class="slider animate__animated animate__fadeIn animate__delay-1s">
+            <div class="swiper-container mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/headphone.png" alt="Headphone">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/headphone1.png" alt="Headphone 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/headphone2.png" alt="Headphone 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/headphone.png" alt="Headphone">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </header>
+    <section id="sidenav">
+        <a href="#" class="nav-link" data-target="home">Home</a>
+        <a href="#" class="nav-link" data-target="about">About</a>
+        <a href="#" class="nav-link" data-target="products">Products</a>
+        <a href="#" class="nav-link" data-target="offers">Offers</a>
+        <a href="#" class="nav-link" data-target="contact">Contact</a>
+    </section>
+
+    <div id="home" class="content-section" style="background-color: skyblue">
+        <h2>Home</h2>
+        <p>Welcome to our e-commerce site!</p>
+    </div>
+    <div id="about" class="content-section" style="background-color: skyblue;">
+        <h2>About</h2>
+        <p>Learn more about our company and values.</p>
+    </div>
+    <div id="products" class="content-section" style="background-color: skyblue;">
+        <h2>Products</h2>
+        <p>Check out our latest products.</p>
+    </div>
+    <div id="offers" class="content-section" style="background-color: skyblue;">
+        <h2>Offers</h2>
+        <p>Discover our special offers.</p>
+    </div>
+    <div id="contact" class="content-section" style="background-color: skyblue;">
+        <h2>Contact</h2>
+        <p>9390167733</p>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+    </script>
+    <script>
+        var sidenav = document.getElementById("sidenav");
+        var menubar = document.getElementById("menubar");
+        sidenav.style.width = "0px";
+        menubar.onclick = function() {
+            if (sidenav.style.width == "0px") {
+                sidenav.style.width = "350px";
+            } else {
+                sidenav.style.width = "0px";
+            }
+        }
+
+        var navLinks = document.querySelectorAll('.nav-link');
+        var contentSections = document.querySelectorAll('.content-section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('data-target');
+                
+                contentSections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+
+                sidenav.style.width = "0px";
+            });
+        });
+    </script>
+</body>
+</html>
